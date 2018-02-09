@@ -6,24 +6,31 @@ namespace AddressBookProject
 {
     public class Contact
     {
-        private string _name;
+        private string _firstName;
+        private string _lastName;
         private string _number;
         private Address _address;
         private int _id;
         private static List<Contact> _contacts;
 
-        public Contact(string name, string number, string streetAdd, string city, string state, string zip)
+        public Contact(string firstName, string lastName, string number, string streetAdd, string city, string state, string zip)
         {
-            _name = name;
+            _firstName = firstName;
+            _lastName = lastName;
             _number = number;
             _address = new Address(streetAdd, city, state, zip);
             _contacts.Add(this);
             _id = _contacts.Count;
         }
 
-        public void SetName(string newName)
+        public void SetFirstName(string firstName)
         {
-            _name = newName;
+            _firstName = firstName;
+        }
+
+        public void SetLastName(string lastName)
+        {
+            _lastName = lastName;
         }
 
         public void SetNumber(string newNumber)
@@ -31,9 +38,19 @@ namespace AddressBookProject
             _number = newNumber;
         }
 
-        public string GetName()
+        public string GetFullName()
         {
-            return _name;
+            return _firstName + " " + _lastName;
+        }
+
+        public string GetFirstName()
+        {
+            return _firstName;
+        }
+
+        public string GetLastName()
+        {
+            return _lastName;
         }
 
         public string GetNumber()
