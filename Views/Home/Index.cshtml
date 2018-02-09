@@ -15,7 +15,7 @@
         }
     </ul>
     <a href="/contact/create-form"><button type="button" class="btn"> Create A New Contact </button></a>
-    @if (Contact.GetAllContacts().Count != null)
+    @if (Contact.GetAllContacts().Count != 0)
     {
         <a href="/contact/clear"><button type="button" class="btn"> Clear Contacts </button></a>
     }

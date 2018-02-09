@@ -1,0 +1,14 @@
+@{
+    Layout = "_Layout";
+}
+
+<div class="jumbotron">
+    <h1>Contact Details</h1>
+</div>
+<div class="container">
+    <p>Name      : @Model.GetFullName()</p>
+    <p>Address   : @Model.GetAddress()</p>
+    <p>Phone #   : @Model.GetNumber()</p>
+</div>
+
+<a href="/"><button type="button" class="btn"> Back </button></a>
