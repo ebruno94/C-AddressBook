@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AddressBookProject
+namespace AddressBookProject.Models
 {
     public class Contact
     {
@@ -13,12 +13,12 @@ namespace AddressBookProject
         private int _id;
         private static List<Contact> _contacts;
 
-        public Contact(string firstName, string lastName, string number, string streetAdd, string city, string state, string zip)
+        public Contact(string firstName, string lastName, string number)
         {
             _firstName = firstName;
             _lastName = lastName;
             _number = number;
-            _address = new Address(streetAdd, city, state, zip);
+            _address = new Address();
             _contacts.Add(this);
             _id = _contacts.Count;
         }
@@ -61,6 +61,11 @@ namespace AddressBookProject
         public Address GetAddress()
         {
             return _address;
+        }
+
+        public void SetAddress(Address newAddress)
+        {
+            _address = newAddress;
         }
 
         public static List<Contact> GetAllContacts()

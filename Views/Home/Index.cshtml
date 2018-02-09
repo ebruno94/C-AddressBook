@@ -10,7 +10,7 @@
     <ul>
         @foreach (var contact in Model)
         {
-            <li><a href="/contact/@tama.GetId()"> @tama.GetName()</a></li>
+            <li><a href="/contact/@contact.GetId()"> @contact.GetName()</a></li>
         }
     </ul>
     <a href="/contact/create-form"><button type="button" class="btn"> Create A New Contact </button></a>

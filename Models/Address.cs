@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AddressBookProject
+namespace AddressBookProject.Models
 {
     public class Address
     {
