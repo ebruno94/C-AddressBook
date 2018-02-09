@@ -1,3 +1,4 @@
+@using AddressBookProject.Models;
 @{
     Layout = "_Layout";
 }
@@ -8,13 +9,13 @@
 <div class="container">
     <h1>Contacts Page</h1>
     <ul>
-        @foreach (var contact in Model)
+        @foreach (var contact in Contact.GetAllContacts())
         {
-            <li><a href="/contact/@contact.GetId()"> @contact.GetName()</a></li>
+            <li><a href="/contact/@contact.GetId()"> @contact.GetFullName()</a></li>
         }
     </ul>
     <a href="/contact/create-form"><button type="button" class="btn"> Create A New Contact </button></a>
-    @if (Model.GetAllContacts().Count != 0)
+    @if (Contact.GetAllContacts().Count != null)
     {
         <a href="/contact/clear"><button type="button" class="btn"> Clear Contacts </button></a>
     }
