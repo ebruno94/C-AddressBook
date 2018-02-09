@@ -11,7 +11,14 @@ namespace AddressBookProject.Controllers
         public ActionResult Index()
         {
             List<Contact> contacts = Contact.GetAllContacts();
-            return View(contacts);
+            if (contacts.Count == 0)
+            {
+                return View();
+            }
+            else
+            {
+                return View(contacts);
+            }
         }
     }
 }
