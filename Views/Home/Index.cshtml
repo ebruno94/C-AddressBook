@@ -2,18 +2,30 @@
 @{
     Layout = "_Layout";
 }
-
-<div class="jumbotron">
-    <h1>Address Book</h1>
-</div>
 <div class="container">
-    <h1>Contacts Page</h1>
-    <ul>
+    <div class="jumbotron">
+        <h1>Address Book</h1>
+    </div>
+</div>
+<div class="container" id="homeContainer">
+    @if (Contact.GetAllContacts().Count == 0)
+    {
+        <h1> Welcome to your address book </h1>
+        <h1> Please click the button below </h1>
+        <br>
+    }
+    else
+    {
+        <h1>Contacts</h1>
+        <hr>
+
         @foreach (var contact in Contact.GetAllContacts())
         {
-            <li><a href="/contact/@contact.GetId()"> @contact.GetFullName()</a></li>
+            <p><a href="/contact/@contact.GetId()"> @contact.GetFullName()</a></p>
         }
-    </ul>
+        <br>
+        <hr>
+    }
     <a href="/contact/create-form"><button type="button" class="btn"> Create A New Contact </button></a>
     @if (Contact.GetAllContacts().Count != 0)
     {
