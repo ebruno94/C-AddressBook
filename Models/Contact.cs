@@ -11,7 +11,7 @@ namespace AddressBookProject.Models
         private string _number;
         private Address _address;
         private int _id;
-        private static List<Contact> _contacts;
+        private static List<Contact> _contacts = new List<Contact>();
 
         public Contact(string firstName, string lastName, string number)
         {
@@ -76,6 +76,11 @@ namespace AddressBookProject.Models
         public static Contact Find(int id)
         {
             return _contacts[id - 1];
+        }
+
+        public int GetId()
+        {
+            return _id;
         }
 
         public static void RemoveContact(int id)
