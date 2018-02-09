@@ -87,5 +87,10 @@ namespace AddressBookProject.Models
         {
             _contacts.RemoveAt(id - 1);
         }
+
+        public static void RemoveAll()
+        {
+            _contacts.Clear();
+        }
     }
 }

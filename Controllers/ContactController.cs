@@ -28,5 +28,12 @@ namespace AddressBookProject.Controllers
             Contact newContact = Contact.Find(id);
             return View(newContact);
         }
+
+        [HttpGet("/contact/{id}/delete")]
+        public ActionResult DeleteContact(int id)
+        {
+            Contact.RemoveContact(id);
+            return View("../Home/Index");
+        }
     }
 }

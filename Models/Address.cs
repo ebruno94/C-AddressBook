@@ -10,7 +10,6 @@ namespace AddressBookProject.Models
         private string _city;
         private string _state;
         private string _zip;
-        private int _id;
 
         public Address()
         {

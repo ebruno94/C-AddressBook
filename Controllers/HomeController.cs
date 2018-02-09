@@ -20,5 +20,12 @@ namespace AddressBookProject.Controllers
                 return View(contacts);
             }
         }
+
+        [HttpGet("/contact/clear-all")]
+        public ActionResult ClearList()
+        {
+            Contact.RemoveAll();
+            return View("Index");
+        }
     }
 }

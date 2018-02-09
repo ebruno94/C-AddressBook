@@ -6,9 +6,12 @@
     <h1>Contact Details</h1>
 </div>
 <div class="container">
-    <p>Name      : @Model.GetFullName()</p>
-    <p>Address   : @Model.GetAddress()</p>
-    <p>Phone #   : @Model.GetNumber()</p>
+    <p>Full Name : @Model.GetFullName()</p>
+    <p>Address &nbsp;&nbsp;&nbsp;&nbsp;: @Model.GetAddress().GetStreetAdd()</p>
+    <p>City/State &nbsp;: @Model.GetAddress().GetCity()&comma; @Model.GetAddress().GetState()</p>
+    <p>Zip Code &nbsp;&nbsp;: @Model.GetAddress().GetZip() </p>
+    <p>Phone # &nbsp;&nbsp;&nbsp;&nbsp;: @Model.GetNumber()</p>
 </div>
 
+<a href="/contact/@Model.GetId()/delete"><button type="button" class="btn"> Delete Contact </button></a>
 <a href="/"><button type="button" class="btn"> Back </button></a>
