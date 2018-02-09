@@ -10,7 +10,8 @@ namespace AddressBookProject.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
-            return View();
+            List<Contact> contacts = Contact.GetAllContacts();
+            return View(contacts);
         }
     }
 }
